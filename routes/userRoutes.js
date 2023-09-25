@@ -6,7 +6,10 @@ const {
   crmUserRegister,
   crmUserLogin,
 } = require("../controllers/userController");
-router.get("/", verifyJwt, homePage);
+const { handelRefereshToken } = require("../controllers/refereshToken");
+// router.get("/", verifyJwt, homePage);
 router.post("/crmuserregister", crmUserRegister);
 router.post("/crmuserlogin", crmUserLogin);
+router.get("/refreshtoken", handelRefereshToken);
+router.get("/");
 module.exports = router;

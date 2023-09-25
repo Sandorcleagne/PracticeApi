@@ -1,8 +1,6 @@
 const CRMUserModel = require("../models/CRMUser");
 const jwt = require("jsonwebtoken");
-const homePage = async (req, res) => {
-  res.json("hello");
-};
+
 const crmUserRegister = async (req, res) => {
   const { name, email, password } = req.body;
   console.log(name, email, password);
@@ -86,4 +84,5 @@ const crmUserLogin = async (req, res) => {
     console.log(error);
   }
 };
-module.exports = { homePage, crmUserRegister, crmUserLogin };
+const crmUserLogout = async (req, res) => {};
+module.exports = { crmUserRegister, crmUserLogin, crmUserLogout };

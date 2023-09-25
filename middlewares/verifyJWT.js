@@ -6,7 +6,7 @@ const verifyJwt = (req, res, next) => {
     return res.status(401).send({
       baseResponse: { status: 0, msg: "user unauthorized" },
     });
-  console.log(authHeader);
+  // console.log(authHeader);
   const token = authHeader.split(" ")[1];
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRETE, (err, decoded) => {
     if (err)
